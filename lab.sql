@@ -83,3 +83,18 @@ select * from cust;
 select * from movie;
 select * from invoice;
 
+-- 3.1. Find out the names of all the customers
+select fname, lname from cust;
+-- 3.2. Print the entire customer table
+select * from cust;
+-- 3.3. Retrieve the list of fname and the area of all the customers
+select fname, area from cust;
+-- 3.4. List the various movie types available from the movie table
+select type from movie;
+/* 3.5. Print the information of invoice table in the following format for all records
+A)The Invoice No. of Customer Id. {cust - id} is {inv - no} and Movie No. is {mv - no}.
+B){cust-id} has taken Movie No. {mv-no} on {issue-date} and will return on (return_date) */
+select ('The Invoice No. of Customer Id. '||cust_id||' is '||inv_no||' and Movie No. is '||mv_no) from invoice;
+select (cust_id||' has taken Movie No. '||mv_no||' on '||issue_date||' and will return on '||return_date) from invoice;
+
+
