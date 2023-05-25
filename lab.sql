@@ -96,5 +96,14 @@ A)The Invoice No. of Customer Id. {cust - id} is {inv - no} and Movie No. is {mv
 B){cust-id} has taken Movie No. {mv-no} on {issue-date} and will return on (return_date) */
 select ('The Invoice No. of Customer Id. '||cust_id||' is '||inv_no||' and Movie No. is '||mv_no) from invoice;
 select (cust_id||' has taken Movie No. '||mv_no||' on '||issue_date||' and will return on '||return_date) from invoice;
-
+-- 3.6. Change the telephone number of pramada to 466389
+update cust set phone_no=446389 where fname='Pramada';
+-- 3.7. Change the issue - date of cust- id 'A01' to 24/07/93
+update invoice set issue_date='24-jul-93' where cust_id='a01';
+-- 3.8. Change the price of  'gone with the wind' to Rs. 250. 00
+update movie set price=250.00 where title='gone wih the wind';
+-- 3.9. Delete the record with invoice number 'l 08' from the invoice table
+delete from invoice where inv_no='i08';
+-- 3.10. Delete all the records having return date before 10th July'93
+delete from invoice where return_date<'16-jul-93';
 
